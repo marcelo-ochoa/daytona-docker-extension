@@ -26,6 +26,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 FROM alpine:3.15
 ENV HOME=/Users/Shared/daytona
 ENV TERM=ansi
+ENV PS1="\e[0;32m[\h \W]\$ \e[m "
 RUN apk update && apk add --no-cache curl openssh-client ncurses bash ttyd tini sudo bash-completion && \
     (curl -sf -L https://download.daytona.io/daytona/install.sh | bash) && \
     echo "daytona:x:1000:1000::$HOME:/bin/bash" >> /etc/passwd && \
@@ -36,10 +37,11 @@ RUN apk update && apk add --no-cache curl openssh-client ncurses bash ttyd tini 
     daytona autocomplete bash && \
     echo "source /etc/profile.d/bash_completion.sh" >> $HOME/.bashrc && \
     echo "export TERM=$TERM" >> $HOME/.bashrc && \
+    echo "export PS1=\"$PS1\"" >> $HOME/.bashrc && \
     echo "daytona whoami" >> $HOME/.bashrc
 
 LABEL org.opencontainers.image.title="Daytona client tool"
-LABEL org.opencontainers.image.description="Docker Extension for using an embedded version of Daytona client tool."
+LABEL org.opencontainers.image.description="Docker Extension for using an embedded version of Daytona client/server tools."
 LABEL org.opencontainers.image.vendor="Marcelo Ochoa"
 LABEL com.docker.desktop.extension.api.version=">= 0.2.3"
 LABEL com.docker.extension.categories="database,utility-tools"

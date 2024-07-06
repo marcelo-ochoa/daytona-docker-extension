@@ -146,6 +146,16 @@ func (t *TTYD) Stop() error {
 	t.process.Wait()
     t.process = nil
 
+	if !t.IsServed() {
+		return nil
+	}
+
+	if err := t.serve.Kill(); err != nil {
+		log.Printf("failed to stop serve: %s\n", err)
+		return err
+	}
+	t.serve.Wait()
+    t.serve = nil
 	return nil
 }
 
