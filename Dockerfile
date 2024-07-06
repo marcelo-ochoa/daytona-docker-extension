@@ -38,6 +38,7 @@ RUN apk update && apk add --no-cache curl openssh-client ncurses bash ttyd tini 
     echo "source /etc/profile.d/bash_completion.sh" >> $HOME/.bashrc && \
     echo "export TERM=$TERM" >> $HOME/.bashrc && \
     echo "export PS1=\"$PS1\"" >> $HOME/.bashrc && \
+    echo "$HOME/daytona.sh" >> $HOME/.bashrc && \
     echo "daytona whoami" >> $HOME/.bashrc
 
 LABEL org.opencontainers.image.title="Daytona client tool"

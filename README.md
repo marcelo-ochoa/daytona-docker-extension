@@ -8,6 +8,7 @@ Until this extension is ready at Docker Extension Hub you can install just by ex
 
 ```bash
 $ docker extension install mochoa/daytona-docker-extension:0.21.1
+Image not available locally, pulling mochoa/daytona-docker-extension:0.21.1...
 Extracting metadata and files for the extension "mochoa/daytona-docker-extension:0.21.1"
 Installing service in Desktop VM...
 Setting additional compose attributes
