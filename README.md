@@ -1,6 +1,19 @@
 # daytona Docker Extension
 
 Daytona extension for Docker Desktop
+## Pre Install steps
+
+By now this extension requires some directories pre-created by hand prior to the installation either by extension market place o manually.
+This directory will be shared by Daytona process/workspaces and Daytona Docker extension. Execute only once time.
+Also Docker Desktop needs access to the base directory, please check Settings->Resources->File sharing options.
+Please execute using command line:
+
+```bash
+sudo rm -rf /Users/Shared/daytona/
+mkdir -p /Users/Shared/daytona/.config/daytona/server/build
+mkdir /Users/Shared/daytona/.config/daytona/server/registry
+mkdir -p /Users/Shared/daytona/.config/daytona/providers
+```
 
 ## Manual Installation
 
