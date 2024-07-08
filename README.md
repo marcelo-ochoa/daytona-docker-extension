@@ -11,9 +11,10 @@ Please execute using command line:
 
 ```bash
 sudo rm -rf /Users/Shared/daytona/
-mkdir -p /Users/Shared/daytona/.config/daytona/server/build
-mkdir /Users/Shared/daytona/.config/daytona/server/registry
-mkdir -p /Users/Shared/daytona/.config/daytona/providers
+sudo mkdir -p /Users/Shared/daytona/.config/daytona/server/build
+sudo mkdir /Users/Shared/daytona/.config/daytona/server/registry
+sudo mkdir -p /Users/Shared/daytona/.config/daytona/providers
+sudo chown -R "$UID:$GID" /Users/Shared/daytona/
 ```
 
 ## Manual Installation

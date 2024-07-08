@@ -62,5 +62,6 @@ COPY --from=client-builder /app/client/dist /ui
 COPY --from=builder /backend/bin/service /
 COPY --chown=1000:1000 startup.sh daytona.sh /Users/Shared/daytona/
 WORKDIR /Users/Shared/daytona
+VOLUME [ "/Users/Shared/daytona", "/Users/Shared/daytona/.config/daytona/server/build", "/Users/Shared/daytona/.config/daytona/server/registry", "/Users/Shared/daytona/.config/daytona/providers" ]
 
 ENTRYPOINT ["/sbin/tini", "--", "/service", "-socket", "/run/guest-services/daytona-docker-extension.sock"]
