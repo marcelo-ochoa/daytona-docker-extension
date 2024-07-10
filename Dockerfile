@@ -24,6 +24,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     go build -trimpath -ldflags="-s -w" -o bin/service
 
 FROM alpine:3.15
+ARG DAYTONA_SERVER_VERSION
 ENV HOME=/Users/Shared/daytona
 ENV TERM=ansi
 ENV PS1="\e[0;32m[\h \W]\$ \e[m "

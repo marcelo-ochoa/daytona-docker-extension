@@ -22,9 +22,9 @@ sudo chown -R "$UID:$GID" /Users/Shared/daytona/
 Until this extension is ready at Docker Extension Hub you can install just by executing:
 
 ```bash
-$ docker extension install mochoa/daytona-docker-extension:0.21.1
-Image not available locally, pulling mochoa/daytona-docker-extension:0.21.1...
-Extracting metadata and files for the extension "mochoa/daytona-docker-extension:0.21.1"
+$ docker extension install mochoa/daytona-docker-extension:0.21.2
+Image not available locally, pulling mochoa/daytona-docker-extension:0.21.2...
+Extracting metadata and files for the extension "mochoa/daytona-docker-extension:0.21.2"
 Installing service in Desktop VM...
 Setting additional compose attributes
 Installing Desktop extension UI for tab "Daytona"...
@@ -80,7 +80,7 @@ Just ignore it, first line says Daytona Server is up and running, but *daytona w
 To uninstall the extension just execute:
 
 ```bash
-$ docker extension uninstall mochoa/daytona-docker-extension:0.21.1
+$ docker extension uninstall mochoa/daytona-docker-extension:0.21.2
 Extension "Daytona client tool" uninstalled successfully
 ```
 

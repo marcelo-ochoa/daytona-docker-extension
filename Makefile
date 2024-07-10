@@ -2,16 +2,17 @@ all: clean extension install
 
 ORG=mochoa
 VERSION=0.21
-MINOR=1
+MINOR=2
 IMAGE_NAME=$(ORG)/daytona-docker-extension
-TAGGED_IMAGE_NAME=$(IMAGE_NAME):$(VERSION).${MINOR}
+DAYTONA_SERVER_VERSION=$(VERSION).${MINOR}
+TAGGED_IMAGE_NAME=$(IMAGE_NAME):$(DAYTONA_SERVER_VERSION)
 
 clean:
 	-docker extension rm $(IMAGE_NAME)
 	-docker rmi $(TAGGED_IMAGE_NAME)
 
 extension:
-	docker buildx build --load -t $(TAGGED_IMAGE_NAME) --build-arg VERSION=$(VERSION) --build-arg MINOR=$(MINOR) .
+	docker buildx build --load -t $(TAGGED_IMAGE_NAME) --build-arg DAYTONA_SERVER_VERSION="v$(DAYTONA_SERVER_VERSION)" --build-arg MINOR=$(MINOR) .
 
 install: extension
 	docker extension install -f $(TAGGED_IMAGE_NAME)
