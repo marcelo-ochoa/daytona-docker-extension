@@ -2,6 +2,9 @@ version: "3"
 
 services:
   daytona-docker-extension:
+    environment:
+      - LOG_LEVEL=debug
+      - HOME=/Users/Shared/daytona
     image: ${DESKTOP_PLUGIN_IMAGE}
     hostname: daytona-docker-extension
     ports:
@@ -9,13 +12,15 @@ services:
       - 3987:3987
       - 57681:7681
     volumes:
-      - daytona_home:/Users/Shared/daytona
-      - /Users/Shared/daytona/.config/daytona/server/build:/Users/Shared/daytona/.config/daytona/server/build
-      - /Users/Shared/daytona/.config/daytona/server/registry:/Users/Shared/daytona/.config/daytona/server/registry
-      - /Users/Shared/daytona/.config/daytona/providers:/Users/Shared/daytona/.config/daytona/providers
+      - daytona:/Users/Shared/daytona
+      - headscale:/Users/Shared/daytona/.config/daytona/server/headscale
       - /var/run/docker.sock.raw:/var/run/docker.sock
-    environment:
-      - LOG_LEVEL=debug
-      - HOME=/Users/Shared/daytona
+
 volumes:
-  daytona_home:
+  headscale:
+  daytona:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/Shared/daytona

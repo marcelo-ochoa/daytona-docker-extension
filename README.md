@@ -10,11 +10,9 @@ Also Docker Desktop needs access to the base directory, please check Settings->R
 Please execute using command line:
 
 ```bash
-sudo rm -rf /Users/Shared/daytona/
-sudo mkdir -p /Users/Shared/daytona/.config/daytona/server/build
-sudo mkdir /Users/Shared/daytona/.config/daytona/server/registry
-sudo mkdir -p /Users/Shared/daytona/.config/daytona/providers
-sudo chown -R "$UID:$GID" /Users/Shared/daytona/
+sudo rm -rf /Users/Shared/daytona
+sudo mkdir -p /Users/Shared/daytona
+sudo chown -R "$(id -u):$(id -g)" /Users/Shared/daytona
 ```
 
 ## Manual Installation
@@ -22,9 +20,9 @@ sudo chown -R "$UID:$GID" /Users/Shared/daytona/
 Until this extension is ready at Docker Extension Hub you can install just by executing:
 
 ```bash
-$ docker extension install mochoa/daytona-docker-extension:0.21.2
-Image not available locally, pulling mochoa/daytona-docker-extension:0.21.2...
-Extracting metadata and files for the extension "mochoa/daytona-docker-extension:0.21.2"
+$ docker extension install mochoa/daytona-docker-extension:0.24.0
+Image not available locally, pulling mochoa/daytona-docker-extension:0.24.0...
+Extracting metadata and files for the extension "mochoa/daytona-docker-extension:0.24.0"
 Installing service in Desktop VM...
 Setting additional compose attributes
 Installing Desktop extension UI for tab "Daytona"...
@@ -80,8 +78,9 @@ Just ignore it, first line says Daytona Server is up and running, but *daytona w
 To uninstall the extension just execute:
 
 ```bash
-$ docker extension uninstall mochoa/daytona-docker-extension:0.21.2
+$ docker extension uninstall mochoa/daytona-docker-extension:0.24.0
 Extension "Daytona client tool" uninstalled successfully
+$ sudo rm -rf /Users/Shared/daytona
 ```
 
 ## Source Code

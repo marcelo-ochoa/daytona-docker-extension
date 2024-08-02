@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.24.0
+
+- Release update.
+
+## v0.22.1
+
+- Release update.
+- Use named volumes.
+
 ## v0.21.2
 
 - Release update.

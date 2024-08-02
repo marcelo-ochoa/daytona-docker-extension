@@ -108,7 +108,7 @@ func (t *TTYD) Start(theme Theme) error {
 	}
 	if !t.IsServed() {
 	
-		cmd := exec.Command("/Users/Shared/daytona/startup.sh")
+		cmd := exec.Command("/sbin/startup.sh")
 		if err := cmd.Start(); err != nil {
 			return err
 		}
