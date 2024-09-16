@@ -26,6 +26,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: mochoa/daytona-docker-extension:0.24.0
+          tags: mochoa/daytona-docker-extension:0.29.1
           build-args: |
-            "DAYTONA_SERVER_VERSION=v0.24.0"
+            "DAYTONA_SERVER_VERSION=v0.29.1"
